@@ -1,4 +1,4 @@
-# Reverse an Array
+# Insert Shift Array
 Take an array and a value as input of function and return an array with the  value added at the middle index of the array.
 
 ## Whiteboard Process

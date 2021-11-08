@@ -66,16 +66,36 @@ def test_insert_before_last_node(ll):
 #     actual = ll.__str__()
 #     assert expected == actual 
 
-def test_kth_from_end(ll):
+def test_kth_from_end_last(ll):
     ll.append(2)
-    expected = 3
-    actual = ll.kthFromEnd(1)
+    expected = 2
+    actual = ll.kthFromEnd(0)
     assert expected == actual
 
 def test_kth_from_end_with_index_out_of_range(ll):
     ll.append(2)
     expected = "index out of range"
     actual = ll.kthFromEnd(6)
+    assert expected == actual
+
+def test_kth_from_end_with_index_negative(ll):
+    ll.append(2)
+    expected = "index out of range"
+    actual = ll.kthFromEnd(-1)
+    assert expected == actual
+
+def test_kth_from_end_one_node():
+    ll2 = LinkedList()
+    ll2.append(1)
+    expected = 1
+    actual = ll2.kthFromEnd(0)
+    assert expected == actual
+
+def test_kth_from_end_middle(ll):
+    ll.append(2)
+    ll.append(1)
+    expected = 3
+    actual = ll.kthFromEnd(2)
     assert expected == actual
 
 @pytest.fixture

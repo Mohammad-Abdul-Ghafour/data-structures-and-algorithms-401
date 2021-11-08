@@ -40,6 +40,44 @@ def test_insert_before_last_node(ll):
     actual = ll.__str__()
     assert expected == actual 
 
+# def test_insert_before_expected_failure(ll):
+#     ll.insertBefore(6,2)
+#     expected = "head -> [5] -> [4] -> [3] -> X"
+#     actual = ll.__str__()
+#     assert expected == actual 
+
+# def test_insert_after_expected_failure(ll):
+#     ll.insertBefore(6,2)
+#     expected = "head -> [5] -> [4] -> [3] -> X"
+#     actual = ll.__str__()
+#     assert expected == actual 
+
+# def test_insert_before_edge_case(ll):
+#     # ll.insertBefore(None,2)
+#     with pytest.raises(TypeError):
+#         ll.insertBefore(None,2)
+#     # expected = "head -> [5] -> [4] -> [3] -> X"
+#     # actual = ll.__str__()
+#     # assert expected == actual 
+
+# def test_insert_after_edge_case(ll):
+#     ll.insertBefore(None,2)
+#     expected = "head -> [5] -> [4] -> [3] -> X"
+#     actual = ll.__str__()
+#     assert expected == actual 
+
+def test_kth_from_end(ll):
+    ll.append(2)
+    expected = 3
+    actual = ll.kthFromEnd(1)
+    assert expected == actual
+
+def test_kth_from_end_with_index_out_of_range(ll):
+    ll.append(2)
+    expected = "index out of range"
+    actual = ll.kthFromEnd(6)
+    assert expected == actual
+
 @pytest.fixture
 def ll():
     ll = LinkedList()

@@ -12,6 +12,8 @@ Create a linked list that contain append, insert before and insert after methods
 
 ![White Board](assets/linked-list-insertions2.jpg)
 
+![White Board](assets/linked-list-insertions3.jpg)
+
 ## Approach & Efficiency
 1. append method:
    * time ← O(n)
@@ -20,6 +22,9 @@ Create a linked list that contain append, insert before and insert after methods
    * time ← O(n)
    * space ← O(n)
 3. insert after method:
+   * time ← O(n)
+   * space ← O(n)
+4. kth from end method:
    * time ← O(n)
    * space ← O(n)
 
@@ -32,19 +37,36 @@ input value = 4
 input newValue = 2
 LinkedList : head -> 5 -> 4 -> 3 -> None
 
-insertAfter :
-
 ll.insertAfter(value,newValue)
 node = Node(2)
+
 1- current = 5
 2- current = 4
+
 node.next = 4
 current.next = node
 
+-------------------------------------------------
+
 ll.insertBefore(value,newValue)
 node = Node(2)
+
 1- current = 5
-2- prev = 5        ,       current = 4
+2- prev = 5        ,   current = 4
+
 node.next = current
 prev.next = node
+
+-------------------------------------------------
+
+ll.kthFromEnd(1)
+node = Node(2)
+arr = []
+
+1- current = 1     ,   arr = [5]
+2- current = 2     ,   arr = [5,4]
+3- current = 3     ,   arr = [5,4,3]
+
+end_index = 3 - (1 + 1) = 1
+return arr[end_index]
 ```

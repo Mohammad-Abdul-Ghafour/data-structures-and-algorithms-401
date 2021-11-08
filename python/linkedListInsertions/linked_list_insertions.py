@@ -1,3 +1,6 @@
+from typing import Counter
+
+
 class Node:
     def __init__(self,value):
         self.value = value
@@ -48,6 +51,22 @@ class LinkedList:
                 if current.value == value:
                     node.next = current
                     prev.next = node
+
+    def kthFromEnd(self,index):
+        current = self.head
+        arr = []
+        arr.append(current)
+        while current.next != None:
+            arr.append(current.next)
+            current = current.next
+        end_index = len(arr) - (index + 1)
+        try:
+            if end_index > len(arr) or end_index < 0:
+                raise IndexError("index out of range")
+            return arr[end_index].value
+        except IndexError:
+            return "index out of range"
+
 
     def __str__(self):
         outPut = "head -> "

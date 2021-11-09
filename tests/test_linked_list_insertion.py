@@ -1,4 +1,4 @@
-from python.linkedListInsertions.linked_list_insertions import Node , LinkedList
+from python.linkedListInsertions.linked_list_insertions import Node , LinkedList , zip_lists
 import pytest
 
 def test_append(ll):
@@ -98,6 +98,33 @@ def test_kth_from_end_middle(ll):
     actual = ll.kthFromEnd(2)
     assert expected == actual
 
+def test_zip_linked_lists(ll,ll2):
+    expected = "head -> [5] -> [2] -> [4] -> [4] -> [3] -> [6] -> X"
+    actual = zip_lists(ll,ll2)
+    assert expected == actual
+
+def test_zip_linked_lists_one_is_not_ll(ll2):
+    ll3 = "hello"
+    expected = "One or two of the inputs is not a linked list"
+    actual = zip_lists(ll3,ll2)
+    assert expected == actual
+
+def test_zip_linked_lists_one_is_none(ll2):
+    ll3 = LinkedList()
+    expected = "head -> [2] -> [4] -> [6] -> X"
+    actual = zip_lists(ll3,ll2)
+    assert expected == actual
+
+def test_zip_linked_lists_first_is_longer(ll4,ll2):
+    expected = "head -> [2] -> [2] -> [4] -> [4] -> [6] -> [6] -> [6] -> [6] -> [6] -> X"
+    actual = zip_lists(ll4,ll2)
+    assert expected == actual
+
+def test_zip_linked_lists_second_is_longer(ll2,ll4):
+    expected = "head -> [2] -> [2] -> [4] -> [4] -> [6] -> [6] -> [6] -> [6] -> [6] -> X"
+    actual = zip_lists(ll4,ll2)
+    assert expected == actual
+
 @pytest.fixture
 def ll():
     ll = LinkedList()
@@ -105,3 +132,22 @@ def ll():
     ll.append(4)
     ll.append(3)
     return ll
+
+@pytest.fixture
+def ll2():
+    ll2 = LinkedList()
+    ll2.append(2)
+    ll2.append(4)
+    ll2.append(6)
+    return ll2
+
+@pytest.fixture
+def ll4():
+    ll4 = LinkedList()
+    ll4.append(2)
+    ll4.append(4)
+    ll4.append(6)
+    ll4.append(6)
+    ll4.append(6)
+    ll4.append(6)
+    return ll4

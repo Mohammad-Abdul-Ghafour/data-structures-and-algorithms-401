@@ -80,3 +80,46 @@ class LinkedList:
             outPut += "X"
             return outPut
 
+def zip_lists(linkedList1 , linkedList2):
+    try:
+        a = linkedList1.head
+        b = linkedList2.head
+        if a is None and b is None:
+            raise ValueError("The two linked list are empty")
+        elif a is None:
+            return linkedList2.__str__()
+        elif b is None:
+            return linkedList1.__str__()
+        else:
+            while b != None:
+                linkedList1.insertAfter(a.value,b.value)
+                print(linkedList1)
+                if a.next != None:    
+                    a = a.next
+                if a.next != None:    
+                    a = a.next
+                b = b.next
+        return linkedList1.__str__()
+    except AttributeError:
+        return "One or two of the inputs is not a linked list"
+ 
+if __name__ == '__main__':
+    ll = LinkedList()
+    ll2 = LinkedList()
+    ll.append(1)
+    ll.append(2)
+    ll.append(6)
+    ll.append(7)
+    ll2.append(3)
+    ll2.append(4)
+    ll2.append(5)
+    print(ll)
+    print(ll2)
+    a = 1
+    b = 2
+    print(zip_lists(a,b)) 
+
+
+
+
+    

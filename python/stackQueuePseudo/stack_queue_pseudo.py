@@ -20,10 +20,12 @@ class PseudoQueue:
     def dequeue(self):
         if self.stack1.is_empty():
             raise ValueError("The Queue Is Empty")
+
         while not self.stack1.is_empty():
             temp = self.stack1.pop()
             self.stack2.push(temp)
         dequeue = self.stack2.pop()
+
         while not self.stack2.is_empty():
             temp = self.stack2.pop()
             if self.stack1.is_empty():
@@ -31,6 +33,7 @@ class PseudoQueue:
                 self.front = self.stack1.top
             else:
                 self.stack1.push(temp)
+
         self.rear = self.stack1.top
         if self.stack1.is_empty() and self.stack2.is_empty():
             self.rear = None

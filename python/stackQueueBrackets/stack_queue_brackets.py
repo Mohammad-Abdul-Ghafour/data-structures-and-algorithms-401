@@ -1,23 +1,25 @@
+from python.stacksAndQueues.stack_and_queues import Stack
+
 
 def stack_queue_brackets(brac_str):
 
-    brac_arr = []
+    brac_arr = Stack()
     for i in brac_str:
         if i == "(" or i == "[" or i == "{":
-            brac_arr.append(i)
+            brac_arr.push(i)
         else:
             if i == ")":
-                if brac_arr[-1] == "(":
+                if brac_arr.top.value == "(":
                     brac_arr.pop()
                 else:
                     return False
             elif i == "]":
-                if brac_arr[-1] == "[":
+                if brac_arr.top.value == "[":
                     brac_arr.pop()
                 else:
                     return False
             elif i == "}":
-                if brac_arr[-1] == "{":
+                if brac_arr.top.value == "{":
                     brac_arr.pop()
                 else:
                     return False

@@ -13,4 +13,5 @@ Challenge:08 | [Stack Queue Pseudo](python/stackQueuePseudo/README.md)
 Challenge:09 | [Animal Shelter](python/stackQueueAnimalShelter/README.md)
 Challenge:10 | [Stack Queue Brackets](python/stackQueueBrackets/READMR.md)
 Challenge:11 | [Trees](python/trees/README.md)
+Challenge:12 | [Trees Max Value](python/treesMax/README.md)
 

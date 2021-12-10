@@ -1,3 +1,4 @@
+[8,4,23,42,16,15]
 def quick_sort(arr ,left, right):
     if len(arr)==1:
         return arr

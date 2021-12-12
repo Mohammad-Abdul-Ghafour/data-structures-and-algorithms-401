@@ -17,7 +17,7 @@ class HashTable(object):
 
     def add(self, key, value):
         hashed_key = self.hash(key)
-        print(hashed_key)
+        # print(hashed_key)
         self.arr[hashed_key].insert([key,value])
 
     def get(self, key):

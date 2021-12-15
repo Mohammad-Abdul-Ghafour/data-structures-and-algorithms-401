@@ -13,4 +13,8 @@ Write a function that **`LEFT JOINs`** two hashmaps into a single data structure
 
 ## Solution
 
+![Whiteboard](left_join.jpg)
+
 [Link To Code](hashmap_left_join.py)
+
+[Link To Tests](tests/test_left_join.py)

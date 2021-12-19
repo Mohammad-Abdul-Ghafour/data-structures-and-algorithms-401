@@ -103,29 +103,45 @@ class Graph:
 
     queue.enqueue(start_vertex)
     visited.add(start_vertex)
-    result.append(start_vertex)
+    result.append(start_vertex.value)
 
     while queue.front:
+      # print(queue.front.value.value)
       current_vertex = queue.dequeue()
 
       neighbors = self.get_neighbors(current_vertex)
 
       for edge in neighbors:
         neighbor = edge.vertex
+        # print(neighbor.value)
 
         if neighbor not in visited:
           queue.enqueue(neighbor)
+          # print(queue.front.value.value)
           visited.add(neighbor)
-          result.append(neighbor)
+          result.append(neighbor.value)
 
     return result
 
 if __name__=="__main__":
-    graph = Graph()
-    node1 = graph.add_node(1)
-    node2 = graph.add_node(2)
-    graph.add_edge(node1,node2)
-    print(graph.get_neighbors(node1))
-    print(graph.get_nodes())
-    print(graph.size())
-    print(graph.bfs(node1))
+    # graph = Graph()
+    # node1 = graph.add_node(1)
+    # node2 = graph.add_node(2)
+    # graph.add_edge(node1,node2)
+    # print(graph.get_neighbors(node1))
+    # print(graph.get_nodes())
+    # print(graph.size())
+    # print(graph.bfs(node1))
+
+    graph1 = Graph()
+    node1 = graph1.add_node(1)
+    node2 = graph1.add_node(2)
+    node3 = graph1.add_node(3)
+    node4 = graph1.add_node(4)
+    graph1.add_edge(node1,node2)
+    graph1.add_edge(node2,node1)
+    graph1.add_edge(node2,node3)
+    graph1.add_edge(node3,node2)
+    graph1.add_edge(node1,node4)
+    graph1.add_edge(node4,node1)
+    print(graph1.bfs(node1))

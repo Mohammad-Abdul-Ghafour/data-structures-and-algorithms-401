@@ -47,6 +47,11 @@ def test_empty_graph():
     expected = []
     assert expected == actual
 
+def test_graph_bfs(graph1):
+    actual = graph1[0].bfs(graph1[1])
+    expected = [graph1[1].value,graph1[2].value,graph1[4].value,graph1[3].value]
+    assert expected == actual
+
 @pytest.fixture
 def graph():
     graph = Graph()
@@ -54,3 +59,18 @@ def graph():
     node2 = graph.add_node(2)
     graph.add_edge(node1,node2)
     return [graph , node1 , node2]
+
+@pytest.fixture
+def graph1():
+    graph1 = Graph()
+    node1 = graph1.add_node(1)
+    node2 = graph1.add_node(2)
+    node3 = graph1.add_node(3)
+    node4 = graph1.add_node(4)
+    graph1.add_edge(node1,node2)
+    graph1.add_edge(node2,node1)
+    graph1.add_edge(node2,node3)
+    graph1.add_edge(node3,node2)
+    graph1.add_edge(node1,node4)
+    graph1.add_edge(node4,node1)
+    return [graph1 , node1 , node2 , node3 , node4]

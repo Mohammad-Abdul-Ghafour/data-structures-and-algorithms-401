@@ -123,17 +123,6 @@ class Graph:
 
     return result
 
-  def dfs(self, start,visited=None):
-    if visited is None:
-        visited = set()
-    visited.add(start.value)
-    neighbors = self.get_neighbors(start)
-
-    for edge in neighbors :
-        if edge.vertex.value not in visited:
-            self.dfs( edge.vertex, visited)
-    return visited
-
 if __name__=="__main__":
     # graph = Graph()
     # node1 = graph.add_node(1)
@@ -155,4 +144,4 @@ if __name__=="__main__":
     graph1.add_edge(node3,node2)
     graph1.add_edge(node1,node4)
     graph1.add_edge(node4,node1)
-    print(graph1.dfs(node1))
+    print(graph1.bfs(node1))

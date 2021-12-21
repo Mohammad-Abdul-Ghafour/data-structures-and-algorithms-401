@@ -24,3 +24,6 @@ Challenge:19 | [Hash Table Find First Repeated Word](python/hashmaprepeatedword/
 Challenge:20 | [Tree Intersection](python/treeIntersection/README.md)
 Challenge:21 | [Hashmap Left Join](python/hashmapLeftJoin/README.md)
 Challenge:22 | [Graph](python/graphs/README.md)
+Challenge:23 | [Graph Breadth First](python/graphs/README.md)
+Challenge:24 | [Graph Trip](python/graphbusinesstrip/README.md)
+Challenge:25 | [Graph Depth First](python/graphs/README.md)

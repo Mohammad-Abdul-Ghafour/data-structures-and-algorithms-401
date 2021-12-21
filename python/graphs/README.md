@@ -4,11 +4,13 @@ A graph is a non-linear data structure that can be looked at as a collection of 
 
 ## Challenge
 
-Implementing a Graph represented as an adjacency list and implement breadth first method.
+Implementing a Graph represented as an adjacency list and implement breadth first method and implement depth first method.
 
 ## Whiteboard Process
 
 ![Whiteboard](graph_breadth_first.jpg)
+
+![Whiteboard](graph_depth_first.jpg)
 
 ## Approach & Efficiency
 
@@ -18,12 +20,14 @@ Implementing a Graph represented as an adjacency list and implement breadth firs
   * GetNodes(): O(1)
   * Size(): O(1)
   * bfs() : O(n^3)
+  * dfs() : O(n^2)
 * Space: O(n+m)
   * AddNode(): O(n)
   * AddEdge(): O(m)
   * GetNodes(): O(1)
   * Size(): O(1)
   * bfs() : O(n)
+  *dfs() : O(n)
 
 ## API
 
@@ -51,6 +55,10 @@ Implementing a Graph represented as an adjacency list and implement breadth firs
   * Get a collection of nodes in the order they were visited.
   * Input : Node.
   * Returns : A list of nodes in the order they were visited.
+* DFS():
+  * Get a collection of nodes in their pre-order depth-first traversal order.
+  * Input : Node.
+  * Returns : A list of nodes in their pre-order depth-first traversal order.
 
 ## Solution
 

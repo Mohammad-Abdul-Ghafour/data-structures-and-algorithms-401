@@ -52,6 +52,11 @@ def test_graph_bfs(graph1):
     expected = [graph1[1].value,graph1[2].value,graph1[4].value,graph1[3].value]
     assert expected == actual
 
+def test_graph_depth_first(graph1):
+    expected = {1,2,3,4}
+    actual = graph1[0].dfs(graph1[1])
+    assert expected == actual
+
 @pytest.fixture
 def graph():
     graph = Graph()
